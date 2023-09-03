@@ -10,8 +10,6 @@ public class Ball extends Circle {
     private Position position_current;
     private Position position_old;
     private Position acceleration = new Position(0,0);
-    private Position velocity;
-
 
 
     public Ball(double x, double y, double radius, String color) {
@@ -23,7 +21,7 @@ public class Ball extends Circle {
     }
 
     public void updatePosition(double dt) {
-        velocity = position_current.minus(position_old);
+        Position velocity = position_current.minus(position_old);
         position_old = position_current;
         position_current = position_current.plus(velocity).plus(acceleration.multiply(dt * dt));
         acceleration.resetZero();

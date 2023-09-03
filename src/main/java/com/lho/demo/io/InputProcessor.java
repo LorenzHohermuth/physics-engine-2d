@@ -1,21 +1,20 @@
 package com.lho.demo.io;
 
 import com.lho.demo.Loop;
+import com.lho.demo.assets.BufferTimer;
 
 import java.util.HashMap;
 
 public class InputProcessor {
 
-    private static double msInSecond = 0;
-
     public static void processPressedKeys () {
-        msInSecond = (msInSecond + Loop.deltaTime()) % 1000;
-        System.out.println(msInSecond);
         HashMap<Integer, Boolean> keyHash = InputHandler.getKeyDictionary();
 
         for ( KeyMapping keyAction :KeyMapping.values()) {
             int keyNumber = keyAction.getKey();
-            if (keyHash.get(keyNumber)) {
+            BufferTimer bt = keyAction.getBuffer();
+            bt.addTime();
+            if (keyHash.get(keyNumber) && bt.checkCounter()) {
                 keyAction.runCommand();
             }
         }

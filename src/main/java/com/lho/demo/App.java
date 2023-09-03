@@ -1,5 +1,6 @@
 package com.lho.demo;
 
+import com.lho.demo.io.InputHandler;
 import com.lho.demo.ui.FxLoader;
 
 public class App {

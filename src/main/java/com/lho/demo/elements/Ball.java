@@ -32,4 +32,12 @@ public class Ball extends Circle {
     public void accelerate(Position acc) {
         acceleration = acceleration.plus(acc);
     }
+
+    public void setPosition(Position position_current) {
+        this.position_current = position_current;
+    }
+
+    public Position getPosition() {
+        return position_current;
+    }
 }

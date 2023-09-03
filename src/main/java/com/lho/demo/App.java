@@ -1,7 +1,9 @@
 package com.lho.demo;
 
+import com.lho.demo.assets.Position;
 import com.lho.demo.io.InputHandler;
 import com.lho.demo.ui.FxLoader;
+import javafx.scene.shape.Circle;
 
 public class App {
 

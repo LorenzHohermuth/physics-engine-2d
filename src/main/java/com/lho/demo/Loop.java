@@ -16,6 +16,7 @@ public class Loop extends AnimationTimer {
         InputHandler.handleInput();
         InputProcessor.processPressedKeys();
         Solver.applyGravity();
+        Solver.applyConstraint();
         Solver.updatePosition(deltaTimeMs / 1000);
     }
 

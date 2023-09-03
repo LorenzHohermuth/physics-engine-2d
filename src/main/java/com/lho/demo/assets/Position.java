@@ -10,21 +10,27 @@ public class Position {
         this.x = x;
         this.y = y;
     }
+
     public Position() {
         this.x = 0;
         this.y = 0;
     }
 
 
-    public Position minus(Position  pos) {
+    public Position minus(Position pos) {
         return performCalculationPositions((x, y) -> x - y, this, pos);
     }
 
-    public Position plus(Position  pos) {
+    public Position plus(Position pos) {
         return performCalculationPositions(Double::sum, this, pos);
     }
+
     public Position multiply(double multiplier) {
-        return performCalculation((x,y) -> x * y, this, multiplier);
+        return performCalculation((x, y) -> x * y, this, multiplier);
+    }
+
+    public Position divide(double divider) {
+        return performCalculation((x, y) -> x / y, this, divider);
     }
 
     private Position performCalculationPositions(BinaryOperator<Double> operator, Position basePos, Position pos) {
@@ -32,6 +38,7 @@ public class Position {
         double calculatedY = operator.apply(basePos.getY(), pos.getY());
         return new Position(calculatedX, calculatedY);
     }
+
     private Position performCalculation(BinaryOperator<Double> operator, Position basePos, double number) {
         double calculatedX = operator.apply(basePos.getX(), number);
         double calculatedY = operator.apply(basePos.getY(), number);
@@ -49,6 +56,12 @@ public class Position {
                 "x=" + x +
                 ", y=" + y +
                 '}';
+    }
+
+    public double lengthForOrigin() {
+        // Pythagoras
+        double cPow2 = Math.pow(x, 2) + Math.pow(y, 2);
+        return Math.sqrt(cPow2);
     }
 
     public double getX() {

@@ -16,7 +16,7 @@ public enum KeyMapping {
 
     private final int keyNumber;
     private final Command command;
-    private BufferTimer buffer;
+    private final BufferTimer buffer;
 
     KeyMapping(int keyNumber, Command command, double timeBetweenProcessingMs) {
         this.keyNumber = keyNumber;

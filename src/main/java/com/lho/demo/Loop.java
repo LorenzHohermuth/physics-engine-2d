@@ -20,6 +20,6 @@ public class Loop extends AnimationTimer {
     }
 
     public static double deltaTime() {
-        return (double) deltaTimeMs;
+        return deltaTimeMs;
     }
 }

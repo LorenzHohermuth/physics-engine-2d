@@ -26,4 +26,8 @@ public class Solver {
             }
         });
     }
+
+    public static void applyConstraint() {
+
+    }
 }

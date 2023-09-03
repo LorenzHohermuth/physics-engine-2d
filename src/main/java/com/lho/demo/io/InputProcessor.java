@@ -1,6 +1,5 @@
 package com.lho.demo.io;
 
-import com.lho.demo.Loop;
 import com.lho.demo.assets.BufferTimer;
 
 import java.util.HashMap;
